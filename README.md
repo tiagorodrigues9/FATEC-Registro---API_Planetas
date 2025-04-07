@@ -43,7 +43,7 @@ git clone https://github.com/tiagorodrigues9/FATEC-Registro---DW3-API_Planetas
 cd AtividadeDW3-API_Planetas
 ```
 
-2. **Instale as dependências:**
+2. **Instale as dependências do projeto:**
 
 ```bash
 npm install
@@ -51,7 +51,7 @@ npm install
 
 3. **Configure sua conexão direto no código:**
 
-No arquivo `config/db-connection.js`, substitua pela sua URI do MongoDB Atlas:
+No arquivo `config/db-connection.js`, altere o usuário e senha pela sua URI do MongoDB Atlas:
 
 ```js
 import mongoose from "mongoose";
