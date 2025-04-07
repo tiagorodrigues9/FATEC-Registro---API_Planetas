@@ -5,7 +5,7 @@ A **API-Planetas** é uma aplicação RESTful desenvolvida com **Node.js** e **E
 
 ---
 
-## 🛠 Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 - **Node.js** + **Express** – Backend e rotas da API  
 - **MongoDB Atlas** - Banco de dados em nuvem 
@@ -13,7 +13,7 @@ A **API-Planetas** é uma aplicação RESTful desenvolvida com **Node.js** e **E
 
 ---
 
-## 📁 Estrutura do Projeto
+## Estrutura do Projeto
 
 ```
 AtividadeDW3-API_Planetas/
@@ -34,7 +34,7 @@ AtividadeDW3-API_Planetas/
 
 ---
 
-## 🚀 Como Executar o Projeto
+## Como Executar o Projeto
 
 1. **Clone o repositório:**
 
