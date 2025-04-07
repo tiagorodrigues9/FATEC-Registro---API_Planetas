@@ -279,9 +279,6 @@ Esse endpoint remove um planeta do banco de dados.
 
 ---
 
-
----
-
 ## Integrantes do Grupo
 
 - *Tiago Rodrigues - Documentação*  
