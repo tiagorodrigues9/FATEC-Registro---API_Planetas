@@ -114,13 +114,6 @@ A API ficará disponível em `http://localhost:4000`.
 
 ---
 
-## Testes com Insomnia 
-
-Você pode usar ferramentas como **Insomnia** para testar os endpoints.  
-É necessário configurar as rotas e métodos corretamente usando `http://localhost:4000`.
-
----
-
 ## Integrantes do Grupo
 
 - *Tiago Rodrigues - Documentação*  
