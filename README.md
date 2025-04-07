@@ -39,7 +39,7 @@ AtividadeDW3-API_Planetas/
 1. **Clone o repositório:**
 
 ```bash
-git clone https://github.com/tiagorodrigues9/FATEC-Registro---DW3-API_Planetas
+git clone https://github.com/tiagorodrigues9/FATEC-Registro---API_Planetas
 cd AtividadeDW3-API_Planetas
 ```
 

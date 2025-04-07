@@ -1,5 +1,5 @@
 import express from "express";
-import mongoose from "./Config/Db-connection.js"; // Conexão com MongoDB Atlas
+import mongoose from "./Config/db-connection.js"; // Conexão com MongoDB Atlas
 import Planet from "./Models/planetas.js";
 import planetasRoutes from "./Routes/planetasRoutes.js"; // Rotas dos planetas
 
