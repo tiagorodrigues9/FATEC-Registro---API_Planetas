@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
-const dbUser = "rokylobinho";
-const dbPassword = "yLRzSdIgnZ5RkJd7";
+const dbUser = "tlrodrigues"
+const dbPassword = "2925183030Actdf!"
 const connect = () => {
     mongoose.connect(
         `mongodb+srv://${dbUser}:${dbPassword}@cluster0.aj4uf.mongodb.net/api-planetas?retryWrites=true&w=majority&appName=Cluster0`
