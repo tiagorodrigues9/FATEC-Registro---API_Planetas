@@ -96,7 +96,86 @@ A API ficará disponível em `http://localhost:4000`.
 
 ---
 
-### Exemplo - POST `/planetas`
+## Endpoints da API
+
+### - GET `/planetas`
+Esse endpoint retorna a listagem de todos os planetas cadastrados no banco de dados.
+
+#### Parâmetros:
+Nenhum.
+
+#### Respostas:
+##### OK! 200
+```json
+[
+  {
+    "_id": "643f1dcecc8361730f5f8311",
+    "id": 1,
+    "nome": "Terra",
+    "tipo": "Rochoso",
+    "descricao": "Nosso planeta",
+    "raio": 6371,
+    "densidade": 5.51,
+    "gravidade": 9.8,
+    "temperatura": 15,
+    "qntLuas": 1
+  }
+]
+```
+
+##### Erro Interno do Servidor! 500
+```json
+{
+  "err": "Erro interno do servidor!"
+}
+```
+
+---
+
+### - GET `/planetas/:id`
+Esse endpoint retorna as informações de um planeta específico pelo seu ID.
+
+#### Parâmetros:
+- `id`: ID do planeta.
+
+#### Respostas:
+##### OK! 200
+```json
+{
+  "_id": "643f1dcecc8361730f5f8311",
+  "id": 1,
+  "nome": "Terra",
+  "tipo": "Rochoso",
+  "descricao": "Nosso planeta",
+  "raio": 6371,
+  "densidade": 5.51,
+  "gravidade": 9.8,
+  "temperatura": 15,
+  "qntLuas": 1
+}
+```
+
+##### Não Encontrado! 404
+```json
+{
+  "err": "Planeta não encontrado!"
+}
+```
+
+##### ID Inválido! 400
+```json
+{
+  "err": "ID inválido!"
+}
+```
+
+---
+
+### - POST `/planetas`
+Esse endpoint cadastra um novo planeta no banco de dados.
+
+#### Parâmetros:
+Requisição via `body` no formato JSON:
 
 ```json
 {
@@ -111,6 +190,95 @@ A API ficará disponível em `http://localhost:4000`.
   "qntLuas": 14
 }
 ```
+
+#### Respostas:
+##### Criado! 201
+```json
+{
+  "msg": "Planeta criado com sucesso!"
+}
+```
+
+##### Dados Inválidos! 400
+```json
+{
+  "err": "Dados inválidos!"
+}
+```
+
+---
+
+### - PUT `/planetas/:id`
+Esse endpoint atualiza os dados de um planeta específico.
+
+#### Parâmetros:
+- `id`: ID do planeta.
+
+Requisição via `body` no formato JSON:
+
+```json
+{
+  "nome": "Netuno Atualizado",
+  "temperatura": -195
+}
+```
+
+#### Respostas:
+##### OK! 200
+```json
+{
+  "msg": "Planeta atualizado com sucesso!"
+}
+```
+
+##### Não Encontrado! 404
+```json
+{
+  "err": "Planeta não encontrado!"
+}
+```
+
+##### Requisição Inválida! 400
+```json
+{
+  "err": "ID inválido ou dados malformados!"
+}
+```
+
+---
+
+### - DELETE `/planetas/:id`
+Esse endpoint remove um planeta do banco de dados.
+
+#### Parâmetros:
+- `id`: ID do planeta a ser removido.
+
+#### Respostas:
+##### Sem Conteúdo! 204
+
+##### Não Encontrado! 404
+```json
+{
+  "err": "Planeta não encontrado!"
+}
+```
+
+##### ID Inválido! 400
+```json
+{
+  "err": "ID inválido!"
+}
+```
+
+##### Erro Interno do Servidor! 500
+```json
+{
+  "err": "Erro interno do servidor!"
+}
+```
+
+---
+
 
 ---
 
