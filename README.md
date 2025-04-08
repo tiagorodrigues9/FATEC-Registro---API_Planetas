@@ -23,13 +23,19 @@ AtividadeDW3-API_Planetas/
 ├── Config/
 │   └── db-connection.js          # Conexão com o banco 
 ├── Controllers/
-│   └── planetaController.js      # Lógica das rotas
+│   ├── planetaController.js      # Lógica das rotas de planetas
+│   └── userController.js         # Lógica das rotas de usuários
+├── Middleware/
+│   └── Auth.js                   # Middleware de autenticação JWT
 ├── Models/
-│   └── planetas.js               # Modelo/schema dos planetas
+│   ├── planetas.js               # Modelo/schema dos planetas
+│   └── user.js                   # Modelo/schema dos usuários
 ├── Routes/
-│   └── planetasRoutes.js         # Rotas da API
+│   ├── planetasRoutes.js         # Rotas da API de planetas
+│   └── userRoutes.js             # Rotas da API de usuários
 ├── Services/
-│   └── planetasServices.js       # Regras de negócio
+│   ├── planetasServices.js       # Regras de negócio dos planetas
+│   └── userServices.js           # Regras de negócio dos usuários
 ```
 
 ---
