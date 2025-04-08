@@ -60,7 +60,7 @@ const dbUser = "seu Usuario aqui";
 const dbPassword = "sua Senha aqui";
 const connect = () => {
     mongoose.connect(
-        `mongodb+srv://${dbUser}:${dbPassword}@cluster0.aj4uf.mongodb.net/api-planetas?retryWrites=true&w=majority&appName=Cluster0`
+        `mongodb+srv://${dbUser}:${dbPassword}@cluster0.vbirz.mongodb.net/api-planetas?retryWrites=true&w=majority&appName=Cluster0`
     );
     const connection = mongoose.connection;
     connection.on("error", () => {
@@ -276,6 +276,69 @@ Esse endpoint remove um planeta do banco de dados.
   "err": "Erro interno do servidor!"
 }
 ```
+
+---
+
+### - POST `/user`
+Esse endpoint é responsável por cadastrar um novo usuário no sistema.
+
+#### Parâmetros:
+Requisição via `body` no formato JSON:
+
+```json
+{
+  "nome": "João Silva",
+  "email": "joao@email.com",
+  "senha": "123456"
+}
+```
+
+#### Respostas:
+##### Criado! 201
+```json
+{
+  "msg": "Usuário criado com sucesso!"
+}
+```
+
+##### Dados Inválidos! 400
+```json
+{
+  "err": "Dados inválidos!"
+}
+```
+
+---
+
+### - POST `/auth`
+Esse endpoint realiza o login de um usuário.
+
+#### Parâmetros:
+Requisição via `body` no formato JSON:
+
+```json
+{
+  "email": "joao@email.com",
+  "senha": "123456"
+}
+```
+
+#### Respostas:
+##### OK! 200
+```json
+{
+  "msg": "Login realizado com sucesso!",
+  "token": "jwt-token-aqui"
+}
+```
+
+##### Não Autorizado! 401
+```json
+{
+  "err": "Credenciais inválidas!"
+}
+```
+
 
 ---
 
