@@ -4,7 +4,7 @@ const dbUser = "tlrodrigues"
 const dbPassword = "2925183030Actdf!"
 const connect = () => {
     mongoose.connect(
-        `mongodb+srv://${dbUser}:${dbPassword}@cluster0.aj4uf.mongodb.net/api-planetas?retryWrites=true&w=majority&appName=Cluster0`
+        `mongodb+srv://${dbUser}:${dbPassword}@cluster0.vbirz.mongodb.net/api-planetas?retryWrites=true&w=majority&appName=Cluster0`
     );
     const connection = mongoose.connection;
     connection.on("error", () => {
