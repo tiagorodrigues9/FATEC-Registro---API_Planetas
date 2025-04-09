@@ -92,18 +92,6 @@ A API ficará disponível em `http://localhost:4000`.
 
 ## Endpoints da API
 
-| Método | Rota              | Descrição                                 |
-|--------|-------------------|-------------------------------------------|
-| GET    | `/planetas`       | Lista todos os planetas                   |
-| GET    | `/planetas/:id`   | Retorna um planeta específico pelo ID     |
-| POST   | `/planetas`       | Cria um novo planeta                      |
-| PUT    | `/planetas/:id`   | Atualiza os dados de um planeta           |
-| DELETE | `/planetas/:id`   | Remove um planeta pelo ID                 |
-
----
-
-## Endpoints da API
-
 ### - GET `/planetas`
 Esse endpoint retorna a listagem de todos os planetas cadastrados no banco de dados.
 
@@ -205,10 +193,10 @@ Requisição via `body` no formato JSON:
 }
 ```
 
-##### Dados Inválidos! 400
+##### Dados Incompletos! 400
 ```json
 {
-  "err": "Dados inválidos!"
+  "err": "Dados incompletos!"
 }
 ```
 
@@ -333,7 +321,6 @@ Requisição via `body` no formato JSON:
 ##### OK! 200
 ```json
 {
-  "msg": "Login realizado com sucesso!",
   "token": "jwt-token-aqui"
 }
 ```
