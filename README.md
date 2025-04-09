@@ -23,13 +23,19 @@ AtividadeDW3-API_Planetas/
 ├── Config/
 │   └── db-connection.js          # Conexão com o banco 
 ├── Controllers/
-│   └── planetaController.js      # Lógica das rotas
+│   ├── planetaController.js      # Lógica das rotas de planetas
+│   └── userController.js         # Lógica das rotas de usuários
+├── Middleware/
+│   └── Auth.js                   # Middleware de autenticação JWT
 ├── Models/
-│   └── planetas.js               # Modelo/schema dos planetas
+│   ├── planetas.js               # Modelo/schema dos planetas
+│   └── user.js                   # Modelo/schema dos usuários
 ├── Routes/
-│   └── planetasRoutes.js         # Rotas da API
+│   ├── planetasRoutes.js         # Rotas da API de planetas
+│   └── userRoutes.js             # Rotas da API de usuários
 ├── Services/
-│   └── planetasServices.js       # Regras de negócio
+│   ├── planetasServices.js       # Regras de negócio dos planetas
+│   └── userServices.js           # Regras de negócio dos usuários
 ```
 
 ---
@@ -60,7 +66,7 @@ const dbUser = "seu Usuario aqui";
 const dbPassword = "sua Senha aqui";
 const connect = () => {
     mongoose.connect(
-        `mongodb+srv://${dbUser}:${dbPassword}@cluster0.aj4uf.mongodb.net/api-planetas?retryWrites=true&w=majority&appName=Cluster0`
+        `mongodb+srv://${dbUser}:${dbPassword}@cluster0.vbirz.mongodb.net/api-planetas?retryWrites=true&w=majority&appName=Cluster0`
     );
     const connection = mongoose.connection;
     connection.on("error", () => {
@@ -276,6 +282,69 @@ Esse endpoint remove um planeta do banco de dados.
   "err": "Erro interno do servidor!"
 }
 ```
+
+---
+
+### - POST `/user`
+Esse endpoint é responsável por cadastrar um novo usuário no sistema.
+
+#### Parâmetros:
+Requisição via `body` no formato JSON:
+
+```json
+{
+  "nome": "João Silva",
+  "email": "joao@email.com",
+  "senha": "123456"
+}
+```
+
+#### Respostas:
+##### Criado! 201
+```json
+{
+  "msg": "Usuário criado com sucesso!"
+}
+```
+
+##### Dados Inválidos! 400
+```json
+{
+  "err": "Dados inválidos!"
+}
+```
+
+---
+
+### - POST `/auth`
+Esse endpoint realiza o login de um usuário.
+
+#### Parâmetros:
+Requisição via `body` no formato JSON:
+
+```json
+{
+  "email": "joao@email.com",
+  "senha": "123456"
+}
+```
+
+#### Respostas:
+##### OK! 200
+```json
+{
+  "msg": "Login realizado com sucesso!",
+  "token": "jwt-token-aqui"
+}
+```
+
+##### Não Autorizado! 401
+```json
+{
+  "err": "Credenciais inválidas!"
+}
+```
+
 
 ---
 
